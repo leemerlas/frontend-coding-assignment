@@ -1,7 +1,7 @@
 {
-  "name": "transactions",
+  "name": "frontend-coding-assignment",
   "version": "0.1.0",
-  "description": "Registry Direct Frontend Coding Assessment",
+  "description": "Registry Direct frontend coding assignment",
   "author": "Registry Direct",
   "private": true,
   "dependencies": {

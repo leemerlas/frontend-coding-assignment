@@ -9,16 +9,16 @@ def get_fake_name():
 
 
 def main():
-    transactions = []
+    security_movements = []
 
-    trans_types = [
+    move_types = [
         'Transfer',
         'Redemption',
         'Allotment'
     ]
 
     for i in range(1, 100):
-        trans_type = random.choice(trans_types)
+        trans_type = random.choice(move_types)
 
         if trans_type == 'Transfer':
             buyer = get_fake_name()
@@ -33,17 +33,19 @@ def main():
         no_of_units = random.randint(1, 100)
         price_per_unit = random.randint(1, 10)
 
-        transactions.append({
+        security_movements.append({
             'id': i,
-            'transaction_type': trans_type,
+            'security_movement_type': trans_type,
             'buyer': buyer,
             'seller': seller,
             'no_of_units': no_of_units,
             'price_per_unit': price_per_unit
         })
 
+    db = {'security_movements': security_movements}
+
     with open('db.json', 'w') as fp:
-        json.dump(transactions, fp)
+        json.dump(db, fp)
 
 
 if __name__ == "__main__":
