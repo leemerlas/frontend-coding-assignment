@@ -117,20 +117,29 @@ const SecurityTable = () => {
     const handleDeleteSecurity = (id, row) => {
         SecurityMovementService.removeSecurityMovement(id)
             .then((resp) => {
+                // TODO:
+                // add deletion prompt via sweetalert
                 setSecurityData(securityData.filter(a => a.id !== row.id))
             })
     }
 
-    const handleEditSecurity = (id) => {
+    const handleEditSecurity = (id, data) => {
         SecurityMovementService.updateSecurityMovement(id)
             .then((resp) => {
+                // TODO:
+                // pass along edited fields
                 console.log(resp.data);
             })
     }
 
+    const handleAddSecurity = () => {
+        // TODO:
+        // should open a new modal containing <SecurityForm />
+    }
+
     return (
         <>
-            <Button variant='contained' color="success" startIcon={<AddIcon />}>
+            <Button variant='contained' color="success" startIcon={<AddIcon />} onClick={handleAddSecurity}>
                 Add
             </Button>
             <TableContainer component={Paper} sx={{ marginTop: '20px' }}>
